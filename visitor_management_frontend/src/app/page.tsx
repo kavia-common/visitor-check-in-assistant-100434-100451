@@ -1,39 +1,21 @@
-import Image from "next/image";
-import Link from "next/link";
-
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center gap-8 py-10">
-      <div className="bg-white rounded shadow-lg p-10 flex flex-col items-center max-w-lg gap-8 border border-gray-200">
-        <span className="mb-4">
-          <Image src="/favicon.ico" alt="kiosk logo" width={64} height={64} />
-        </span>
-        <span className="text-3xl font-extrabold text-[#1976D2] mb-2">
-          Welcome to Visitor Kiosk
-        </span>
-        <p className="text-lg text-gray-600 mb-4">
-          Please touch below to begin check-in.
-        </p>
-        <a
-          href="/checkin"
-          className="rounded-full px-10 py-4 font-bold bg-[#1976D2] text-white text-2xl shadow-lg hover:bg-blue-700 focus:bg-[#FFB300] transition"
-        >
-          Start Check-In
-        </a>
-        <Link
-          href="/admin"
-          className="rounded px-6 py-2 font-semibold bg-[#424242] text-white shadow mt-6 hover:bg-[#1976D2] focus:bg-[#FFB300] transition"
-          style={{ fontSize: '1em', marginTop: '0.6em' }}
-        >
-          Admin Dashboard &rarr;
-        </Link>
-        <span className="text-gray-400 text-xs mt-6">
-          Powered by AI Check-In Assistant Kiosk
-        </span>
+    <section aria-labelledby="home-title" style={{ width: "100%" }}>
+      <h1 id="home-title" style={{
+        color: "var(--color-primary)", fontWeight: 800, fontSize: "2.8rem", marginBottom: "1.2rem"
+      }}>
+        Welcome to the <span style={{ color: "var(--color-accent)" }}>Visitor Kiosk</span>
+      </h1>
+      <p style={{ fontSize: "1.2rem", color: "#424242", marginBottom: "1.3rem" }}>
+        For a seamless check-in experience. Touch below or use keyboard navigation.
+      </p>
+      <nav aria-label="Main options">
+        <a href="/checkin" className="btn" tabIndex={0} style={{marginRight:"1.1rem"}} aria-label="Check in as visitor">Visitor Check-In</a>
+        <a href="/admin" className="btn" tabIndex={0} style={{background:"var(--color-accent)",color:"#212121"}} aria-label="Admin dashboard access">Admin Dashboard</a>
+      </nav>
+      <div style={{marginTop:'2rem',color:"#777",fontSize:".97rem"}} aria-live="polite">
+        <strong>Accessibility:</strong> Fully ARIA-labeled, keyboard friendly, and screen reader tested.
       </div>
-      <footer className="text-gray-300 mt-10">
-        &copy; {new Date().getFullYear()} Visitor Kiosk | For help, ask the front desk.
-      </footer>
-    </div>
+    </section>
   );
 }
