@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -19,6 +20,13 @@ export default function Home() {
         >
           Start Check-In
         </a>
+        <Link
+          href="/admin"
+          className="rounded px-6 py-2 font-semibold bg-[#424242] text-white shadow mt-6 hover:bg-[#1976D2] focus:bg-[#FFB300] transition"
+          style={{ fontSize: '1em', marginTop: '0.6em' }}
+        >
+          Admin Dashboard &rarr;
+        </Link>
         <span className="text-gray-400 text-xs mt-6">
           Powered by AI Check-In Assistant Kiosk
         </span>
